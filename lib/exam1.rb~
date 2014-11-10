@@ -1,0 +1,8 @@
+require "exam1/version"
+require "exam1/SeleccionSimple.rb"
+require "exam1/linkedlist.rb"
+require "exam1/VerdaderoFalso.rb"
+
+module Exam1
+  # Your code goes here...
+end
