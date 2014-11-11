@@ -15,6 +15,7 @@ end
 #                          installed the spring binstubs per the docs)
 #  * zeus: 'zeus rspec' (requires the server to be started separetly)
 #  * 'just' rspec: 'rspec'
+=begin
 guard :rspec, cmd: 'bundle exec rspec' do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
@@ -36,4 +37,4 @@ guard :rspec, cmd: 'bundle exec rspec' do
   watch(%r{^spec/acceptance/(.+)\.feature$})
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
-
+=end
