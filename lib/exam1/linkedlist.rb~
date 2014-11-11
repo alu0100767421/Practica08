@@ -7,14 +7,9 @@ class List
 
 	
 	attr_accessor :head, :tail
-<<<<<<< HEAD
 	 
-	include Enumerable
-	 
-=======
 	include Enumerable
 	
->>>>>>> d9128f24b3c2301f1b4ba34fdd2a7c657e369e35
 	def initialize(head)
 	
 
