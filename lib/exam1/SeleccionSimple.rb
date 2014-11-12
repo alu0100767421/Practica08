@@ -1,13 +1,14 @@
 class SeleccionSimple
-	attr_reader :pregunta, :respuesta
+	attr_reader :pregunta, :respuesta, :nivel
 
 	
 	include Comparable
 	
 
-	def initialize(pregunta,respuesta)
+	def initialize(pregunta,respuesta,nivel)
 		@pregunta=pregunta
 		@respuesta=respuesta
+		@nivel=nivel
 	end
 
 		
@@ -17,26 +18,47 @@ class SeleccionSimple
 	end
 	
 	def <=>(other)
+=begin	
+		for i in (0..3)
+			respuesta_size += @respuesta[i].size
+			respuesta_other_size += other.respuesta[i].size
+		end
+=end
+	
 		return nil unless other.is_a?SeleccionSimple
-		@pregunta.size + @respuesta.size <=> other.pregunta.size + other.respuesta.size
-
+		@nivel  <=> other.nivel
+		#@pregunta.size + respuesta_size <=> other.pregunta.size + respuesta_other_size
+		
 		
 	end
 	
 	def ==(other)
+		
 		return nil unless other.is_a?SeleccionSimple
-		@pregunta == other.pregunta
+		if @nivel == other.nivel
 		@respuesta == other.respuesta
+		end
+	
+		#return nil unless other.is_a?SeleccionSimple
+		@pregunta == other.pregunta
+
+	end
+=begin	
+	def <=(other)
+	
+		
+	
+		@pregunta.size < 	
 	end
 	
-
+=end
 end
 
 class Verdadero_Falso < SeleccionSimple
 
-  def initialize(pregunta)
+  def initialize(pregunta,nivel)
   
-  	super(pregunta, ['Cierto','Falso'])  	
+  	super(pregunta, ['Cierto','Falso'],nivel)  	
   
   end
   

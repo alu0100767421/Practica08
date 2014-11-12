@@ -87,16 +87,6 @@ class List
 	
 	end
 
-	def each
-	
-	   actual = @tail
-	
-		while actual != nil
-		   yield actual.value
-		   actual = actual.siguiente
-		end
-	
-	end
 end
 	
 	

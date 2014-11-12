@@ -15,13 +15,13 @@ class Xyz
 end
 
 xyz = Xyz.new
-p xyz.pots", ['#<Xyz:0xa000208>','nil',0,'Ninguna de las anteriores'])
+p xyz.pots", ['#<Xyz:0xa000208>','nil',0,'Ninguna de las anteriores'],1)
 
  @p2 = Verdadero_Falso.new("La siguiente definicion de un hash en Ruby es valida:\n
 hash_raro = {\n
   [1, 2, 3] => Object.new(),
   Hash.new => :toto\n
-}")
+}",2)
 
  @p3 = SeleccionSimple.new("¿Cual es la salida del siguiente codigo Ruby?\n
 class Array
@@ -29,13 +29,13 @@ class Array
   HEY!
  end
 end
-p [1, bob].say_hi", [1,'bob','HEY!','Ninguna de las anteriores'])
+p [1, bob].say_hi", [1,'bob','HEY!','Ninguna de las anteriores'],3)
 
  @p4 = SeleccionSimple.new("¿Cual es el tipo del objeto en el siguiente codigo Ruby?\n
 class Objeto\n
-end", ['Una instancia de la clase Class','Una constante','Un objeto','Ninguna de las anteriores'])
+end", ['Una instancia de la clase Class','Una constante','Un objeto','Ninguna de las anteriores'],4)
 
- @p5 = Verdadero_Falso.new("Es apropiado que una clase Tablero herede de una clase Juego")
+ @p5 = Verdadero_Falso.new("Es apropiado que una clase Tablero herede de una clase Juego",5)
  end
  
  ##FIN DE LA INICIALIZACION
@@ -211,10 +211,11 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     	
     	it ":Realizando pruebas de comparación" do
     	
-    	expect(@p1 < @p5).to eq(false)
-    	expect(@p1 > @p4).to eq(true)
+    	expect(@p1 < @p5).to eq(true)
+    	expect(@p1 > @p4).to eq(false)
     	expect(@p1 > @p2).to eq(false)
-    	expect(@p4 <= @p1).to eq(true)
+    	expect(@p4 <= @p1).to eq(false)
+    	expect(@p4 <= @p2).to eq(false)
     	end
     
     end
@@ -237,6 +238,7 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     
       @lista = List.new(@nodo1)
       
+=begin    
         @n1 = Nodo.new(1)
     	@n2 = Nodo.new(2)
     	@n3 = Nodo.new(3)
@@ -247,7 +249,7 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     	@lista_new.insert_head(@n2)
     	@lista_new.insert_head(@n3)
     	@lista_new.insert_tail(@n4)
-    
+=end
     end
   
   
@@ -299,34 +301,50 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     
     it "#Pruebas para utilizar el Mixin Enumerable - Funcion maximo" do
     	
-    	expect(@lista_new.max).to eq(4)
+    	
+    	n = Nodo.new(@p5)
+    	@l = List.new(n)
+    	expect(@l.max).to eq(@p5) 
     
     end
     
     it "#Pruebas para utilizar el Mixin Enumerable - Funcion minimo" do
     
-	expect(@lista_new.min).to eq(1)  
+	#expect(@lista.nivel.min).to eq(1) 
+	n = Nodo.new(@p5)
+    	@l = List.new(n)
+    	expect(@l.min).to eq(@p5) 
     
     end   
     
     it "#Funcion map (Multiplicar todos los elementos por 5)" do
     
-    	p = @lista_new.map{|i| i*5}
-    	expect(p).to eq([20,5,10,15])
+    #	p = @lista_new.map{|i| i*5}
+    #	expect(p).to eq([20,5,10,15])
+=begin  
+    @li = List.new(nodo1)
+    @li.insert_head(nodo2)
+    @li.insert_head(nodo3)
+    @li.insert_head(nodo4)
+    @li.insert_head(nodo5)
     
+    p = @li.map{|i|}
+    expect(p).to eq(@li.print)
+=end    
     end
     
-    it "#Funcion include (¿Se incluye el numero 4?)" do
+    it "#Funcion include (¿La pregunta 1?)" do
     
-    	expect(@lista_new.include?4).to eq(true)
-    	expect(@lista_new.include?5).to eq(false)
-    	
+    	#@lista.insert_head(@nodo5)
+    
+    	#expect(@lista.head.nivel.include?@nodo5.nivel).to eq(true)
+    	   	
     end
     
     it "#Funcion each" do
     
     	#puts @lista_new.print
-    	expect(@lista_new.each{|x|}).to eq(@lista_new.print)
+    	expect(@lista.each{|x|}).to eq(@lista.print)
     
     end
     
