@@ -34,12 +34,13 @@ class SeleccionSimple
 	
 	def ==(other)
 		
+		return nil unless other.is_a?SeleccionSimple
 		if @nivel == other.nivel
 		@respuesta == other.respuesta
 		end
 	
-		return nil unless other.is_a?SeleccionSimple
-		@pregunta == other.pregunta
+		#return nil unless other.is_a?SeleccionSimple
+		#@pregunta == other.pregunta
 
 	end
 =begin	

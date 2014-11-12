@@ -238,6 +238,12 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     
       @lista = List.new(@nodo1)
       
+      @li = List.new(@nodo1)
+      @li.insert_head(@nodo2)
+      @li.insert_head(@nodo3)
+      @li.insert_head(@nodo4)
+      @li.insert_head(@nodo5)
+      
 =begin    
         @n1 = Nodo.new(1)
     	@n2 = Nodo.new(2)
@@ -302,48 +308,40 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     it "#Pruebas para utilizar el Mixin Enumerable - Funcion maximo" do
     	
     	
-    	n = Nodo.new(@p5)
-    	@l = List.new(n)
-    	expect(@l.max).to eq(@p5) 
+    
+    	expect(@li.max).to eq(@p5) 
     
     end
     
     it "#Pruebas para utilizar el Mixin Enumerable - Funcion minimo" do
     
-	#expect(@lista.nivel.min).to eq(1) 
-	n = Nodo.new(@p5)
-    	@l = List.new(n)
-    	expect(@l.min).to eq(@p5) 
+	
+    	expect(@li.min).to eq(@p1) 
     
     end   
     
-    it "#Funcion map (Multiplicar todos los elementos por 5)" do
+    it "#Funcion sort: Devuelve las salidas a la inversa segun el nivel " do
     
-    #	p = @lista_new.map{|i| i*5}
-    #	expect(p).to eq([20,5,10,15])
-=begin  
-    @li = List.new(nodo1)
-    @li.insert_head(nodo2)
-    @li.insert_head(nodo3)
-    @li.insert_head(nodo4)
-    @li.insert_head(nodo5)
+    p = @li.sort{|b, a| a.nivel <=> b.nivel}
+    expect(p).to eq([@p5,@p4,@p3,@p2,@p1])
+   
     
-    p = @li.map{|i|}
-    expect(p).to eq(@li.print)
-=end    
     end
     
-    it "#Funcion include (¿La pregunta 1?)" do
+    it "#Funcion include" do
     
-    	#@lista.insert_head(@nodo5)
+     
     
-    	#expect(@lista.head.nivel.include?@nodo5.nivel).to eq(true)
+    	expect(@li.include?@p5).to eq(true)
+    	expect(@li.include?@p4).to eq(true)
+    	expect(@li.include?@p3).to eq(true)
+    	expect(@li.include?@p2).to eq(true)
+    	expect(@li.include?@p1).to eq(true)
     	   	
     end
     
     it "#Funcion each" do
     
-    	#puts @lista_new.print
     	expect(@lista.each{|x|}).to eq(@lista.print)
     
     end

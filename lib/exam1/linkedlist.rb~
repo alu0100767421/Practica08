@@ -1,4 +1,12 @@
 Nodo = Struct.new(:value, :siguiente, :previo)
+class Nodo
+
+	include Comparable
+	def <=>(other)
+		value <=> other.value
+	end
+
+end
 
 
 
