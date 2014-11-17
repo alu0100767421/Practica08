@@ -329,9 +329,7 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     end
     
     it "#Funcion include" do
-    
-     
-    
+        
     	expect(@li.include?@p5).to eq(true)
     	expect(@li.include?@p4).to eq(true)
     	expect(@li.include?@p3).to eq(true)

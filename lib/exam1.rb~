@@ -1,7 +1,7 @@
 require "exam1/version"
-require "exam1/SeleccionSimple.rb"
-require "exam1/linkedlist.rb"
-require "exam1/VerdaderoFalso.rb"
+require "exam1/SeleccionSimple"
+require "exam1/linkedlist"
+
 
 module Exam1
   # Your code goes here...
