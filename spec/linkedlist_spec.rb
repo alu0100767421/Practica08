@@ -243,6 +243,8 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
       @li.insert_head(@nodo3)
       @li.insert_head(@nodo4)
       @li.insert_head(@nodo5)
+
+      @ex=Examen.new(@li)
       
 =begin    
         @n1 = Nodo.new(1)
@@ -343,7 +345,11 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     	expect(@lista.each{|x|}).to eq(@lista.print)
     
     end
-    
+  
+    it "#Pregunta 1" do
+	expect(@ex.to_s).to eq(5)
+    end
+	  
   end
   
   
