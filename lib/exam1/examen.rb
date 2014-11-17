@@ -1,5 +1,5 @@
-require './SeleccionSimple'
-require './linkedlist'
+require 'exam1/SeleccionSimple'
+require 'exam1/linkedlist'
 
 class Examen 
 
@@ -68,10 +68,6 @@ attr_accessor :exam
 		end
 	
 	end
-
-
-end
-
 
 
 end
