@@ -384,10 +384,16 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     end
    it "#Calificiación" do
 
-	@ex.calificacion
+	#@ex.calificacion
 
-	expect(@ex.correctaP>=3).to eq(true)
-	expect(@ex.correctaP<3),to eq(false)	
+        expect(@ex.correcta('b',0)).to eq(true)
+    	expect(@ex.correcta('a',1)).to eq(true)
+    	expect(@ex.correcta('d',2)).to eq(false)
+    	expect(@ex.correcta('a',3)).to eq(true)
+    	expect(@ex.correcta('a',4)).to eq(true)
+
+	expect(@ex.calificacion).to eq(true)
+	#expect(@ex.correctaP<3).to eq(false)	
 
    end
 

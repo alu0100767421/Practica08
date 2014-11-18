@@ -9,7 +9,7 @@ attr_accessor :exam, :respuesta_usuario, :rcorrecta, :correctaP
 		@exam = lista_preguntas	
 		@respuesta_usuario=[nil,nil,nil,nil,nil]
 		@rcorrecta = ['b','a','c','a','a']
-		@correctaP = 0
+		@correctaP=0
 	end
 	
 	def respuesta_user 
@@ -38,7 +38,7 @@ attr_accessor :exam, :respuesta_usuario, :rcorrecta, :correctaP
 		if ans_usuario == @rcorrecta[numero_preg] then
 		
 			puts "Pregunta #{numero_preg+1}: Respuesta correcta"
-			@correctaP+1
+			@correctaP+=1
 			true
 		
 		else
@@ -51,11 +51,11 @@ attr_accessor :exam, :respuesta_usuario, :rcorrecta, :correctaP
 
 	def calificacion
 
-		if @correctaP >= 3
-			puts "Aprobado"
+		if @correctaP >= 3 then
+			puts "Calificación: Aprobado"
 			true
 		else
-			puts "Suspendido"
+			puts "Calificación: Suspendido"
 			false
 		end
 
