@@ -382,7 +382,14 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     	expect(@ex.is_a?Examen).to eq(true)
     	
     end
-   
+   it "#Calificiación" do
+
+	@ex.calificacion
+
+	expect(@ex.correctaP>=3).to eq(true)
+	expect(@ex.correctaP<3),to eq(false)	
+
+   end
 
 	  
   end

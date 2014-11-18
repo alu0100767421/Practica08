@@ -3,12 +3,13 @@ require 'exam1/linkedlist'
 
 class Examen 
 
-attr_accessor :exam, :respuesta_usuario, :rcorrecta
+attr_accessor :exam, :respuesta_usuario, :rcorrecta, :correctaP
 
 	def initialize (lista_preguntas)
 		@exam = lista_preguntas	
 		@respuesta_usuario=[nil,nil,nil,nil,nil]
 		@rcorrecta = ['b','a','c','a','a']
+		@correctaP = 0
 	end
 	
 	def respuesta_user 
@@ -37,6 +38,7 @@ attr_accessor :exam, :respuesta_usuario, :rcorrecta
 		if ans_usuario == @rcorrecta[numero_preg] then
 		
 			puts "Pregunta #{numero_preg+1}: Respuesta correcta"
+			@correctaP+1
 			true
 		
 		else
@@ -45,6 +47,18 @@ attr_accessor :exam, :respuesta_usuario, :rcorrecta
 		
 		end
 		
+	end
+
+	def calificacion
+
+		if @correctaP >= 3
+			puts "Aprobado"
+			true
+		else
+			puts "Suspendido"
+			false
+		end
+
 	end
 	
 	def to_s
