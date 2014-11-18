@@ -1,6 +1,9 @@
 require 'spec_helper'
 require 'exam1'
 
+require 'coveralls'
+Coveralls.wear!
+
 
 ##INICIALIZAMOS CADA UNA DE LAS PREGUNTAS CON SUS RESPECTIVAS RESPUESTAS
 
