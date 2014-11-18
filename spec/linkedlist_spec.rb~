@@ -227,6 +227,8 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
   
   
   describe List do
+  
+  
     before :each do
     
       @nodo1 = Nodo.new(@p1)
@@ -243,22 +245,21 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
       @li.insert_head(@nodo3)
       @li.insert_head(@nodo4)
       @li.insert_head(@nodo5)
-
-      @ex=Examen.new(@li)
       
-=begin    
-        @n1 = Nodo.new(1)
-    	@n2 = Nodo.new(2)
-    	@n3 = Nodo.new(3)
-    	@n4 = Nodo.new(4)
-    
-    
-    	@lista_new = List.new(@n1)
-    	@lista_new.insert_head(@n2)
-    	@lista_new.insert_head(@n3)
-    	@lista_new.insert_tail(@n4)
-=end
+      @l = List.new(@nodo1)
+      @l.insert_head(@nodo2)
+      @l.insert_head(@nodo3)
+      @l.insert_head(@nodo4)
+      @l.insert_head(@nodo5)
+
+      @ex = Examen.new(@l)
+      
+      #@ex.respuesta_user
+     
+
     end
+    
+    
   
   
     describe "Nodo" do
@@ -346,9 +347,32 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     
     end
   
-    it "#Pregunta 1" do
-	expect(@ex.to_s).to eq(5)
+    it "#Preguntas" do
+	
+	expect(@ex.to_s).to eq(@l.print)
+	
     end
+    
+    it "#Respuestas Correctas" do
+    
+    	expect(@ex.rcorrecta[0]).to eq("b")
+    	expect(@ex.rcorrecta[1]).to eq("a")
+    	expect(@ex.rcorrecta[2]).to eq("c")
+    	expect(@ex.rcorrecta[3]).to eq("a")
+    	expect(@ex.rcorrecta[4]).to eq("a")
+    
+    end
+    
+    it "#Introducir respuestas usuario" do
+     r =  @ex.stub(:gets) { "b, a, c, a, a" }
+   # expect(r).to eq(0)
+  
+  #  eq(@ex.respuesta_correcta)
+    
+    #expect(@ex.vresp_user).to eq(@ex.respuesta_correcta)
+    #r = gets.chomp 
+    end
+
 	  
   end
   

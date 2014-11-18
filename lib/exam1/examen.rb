@@ -3,21 +3,25 @@ require 'exam1/linkedlist'
 
 class Examen 
 
-attr_accessor :exam
+attr_accessor :exam, :respuesta_usuario, :rcorrecta
 
 	def initialize (lista_preguntas)
 		@exam = lista_preguntas	
+		@respuesta_usuario=[nil,nil,nil,nil,nil]
+		@rcorrecta = ['b','a','c','a','a']
 	end
 	
 	def respuesta_user 
-	
+=begin
 	 puts "1): " + r1=gets.chomp
 	 puts "2): " + r2=gets.chomp
 	 puts "3): " + r3=gets.chomp
 	 puts "4): " + r4=gets.chomp
 	 puts "5): " + r5=gets.chomp
+=end
 	
-	@respuesta_usuario = [r1,r2,r3,r4,r5]
+#	@respuesta_usuario = [r1,r2,r3,r4,r5]
+@respuesta_usuario = [gets.chomp,gets.chomp,gets.chomp,gets.chomp,gets.chomp]
 	
 	end
 	
@@ -35,6 +39,7 @@ attr_accessor :exam
 	
 			puts "#{i} #{actual.value}\n"
 			actual = actual.siguiente
+			
 		i+=1
 		
 		end
@@ -43,9 +48,9 @@ attr_accessor :exam
 	
 	def respuesta_correcta
 
-		rcorrecta = ['b','a','c','a','a']
+		return @rcorrecta 
 		
-		if vresp_user != rcorrecta 
+=begin		if vresp_user != rcorrecta 
 		
 			puts "Hay respuestas erroneas\n\n"
 		
@@ -66,7 +71,7 @@ attr_accessor :exam
 				puts "Todas las respuestas son correctas\n"
 			
 		end
-	
+=end
 	end
 
 
