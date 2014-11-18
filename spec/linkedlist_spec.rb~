@@ -365,6 +365,8 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     
     it "#Introducir respuestas usuario" do
      r =  @ex.stub(:gets) { "b, a, c, a, a" }
+     
+     
    # expect(r).to eq(0)
   
   #  eq(@ex.respuesta_correcta)
