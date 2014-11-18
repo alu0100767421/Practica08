@@ -1,8 +1,8 @@
 require 'spec_helper'
 require 'exam1'
 
-require 'coveralls'
-Coveralls.wear!
+#require 'coveralls'
+#Coveralls.wear!
 
 
 ##INICIALIZAMOS CADA UNA DE LAS PREGUNTAS CON SUS RESPECTIVAS RESPUESTAS
@@ -18,13 +18,13 @@ class Xyz
 end
 
 xyz = Xyz.new
-p xyz.pots", ['#<Xyz:0xa000208>','nil',0,'Ninguna de las anteriores'],1)
+p xyz.pots", ['#<Xyz:0xa000208>','nil',0,'Ninguna de las anteriores'],1,'b')
 
  @p2 = Verdadero_Falso.new("La siguiente definicion de un hash en Ruby es valida:\n
 hash_raro = {\n
   [1, 2, 3] => Object.new(),
   Hash.new => :toto\n
-}",2)
+}",2,'a')
 
  @p3 = SeleccionSimple.new("¿Cual es la salida del siguiente codigo Ruby?\n
 class Array
@@ -32,13 +32,13 @@ class Array
   HEY!
  end
 end
-p [1, bob].say_hi", [1,'bob','HEY!','Ninguna de las anteriores'],3)
+p [1, bob].say_hi", [1,'bob','HEY!','Ninguna de las anteriores'],3,'c')
 
  @p4 = SeleccionSimple.new("¿Cual es el tipo del objeto en el siguiente codigo Ruby?\n
 class Objeto\n
-end", ['Una instancia de la clase Class','Una constante','Un objeto','Ninguna de las anteriores'],4)
+end", ['Una instancia de la clase Class','Una constante','Un objeto','Ninguna de las anteriores'],4,'a')
 
- @p5 = Verdadero_Falso.new("Es apropiado que una clase Tablero herede de una clase Juego",5)
+ @p5 = Verdadero_Falso.new("Es apropiado que una clase Tablero herede de una clase Juego",5,'a')
  end
  
  ##FIN DE LA INICIALIZACION
@@ -350,33 +350,8 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     
     end
   
-    it "#Preguntas" do
-	
-	expect(@ex.to_s).to eq(@l.print)
-	
-    end
-    
-    it "#Respuestas Correctas" do
-    
-    	expect(@ex.rcorrecta[0]).to eq("b")
-    	expect(@ex.rcorrecta[1]).to eq("a")
-    	expect(@ex.rcorrecta[2]).to eq("c")
-    	expect(@ex.rcorrecta[3]).to eq("a")
-    	expect(@ex.rcorrecta[4]).to eq("a")
-    
-    end
-    
-    it "#Introducir respuestas usuario" do
-    ## r =  @ex.stub(:gets) { "b, a, c, a, a" }
-     
-     
-   # expect(r).to eq(0)
   
-  #  eq(@ex.respuesta_correcta)
-    
-    #expect(@ex.vresp_user).to eq(@ex.respuesta_correcta)
-    #r = gets.chomp 
-    end
+   
 
 	  
   end

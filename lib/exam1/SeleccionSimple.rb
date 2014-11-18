@@ -1,14 +1,15 @@
 class SeleccionSimple
-	attr_reader :pregunta, :respuesta, :nivel
+	attr_reader :pregunta, :respuesta, :nivel, :rescorr
 
 	
 	include Comparable
 	
 
-	def initialize(pregunta,respuesta,nivel)
+	def initialize(pregunta,respuesta,nivel,rescorr)
 		@pregunta=pregunta
 		@respuesta=respuesta
 		@nivel=nivel
+		@rescorr=rescorr
 	end
 
 		
@@ -56,9 +57,9 @@ end
 
 class Verdadero_Falso < SeleccionSimple
 
-  def initialize(pregunta,nivel)
+  def initialize(pregunta,nivel,rescorr)
   
-  	super(pregunta, ['Cierto','Falso'],nivel)  	
+  	super(pregunta, ['Cierto','Falso'],nivel,rescorr)  	
   
   end
   

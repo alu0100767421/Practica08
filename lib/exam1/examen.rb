@@ -12,6 +12,9 @@ attr_accessor :exam, :respuesta_usuario, :rcorrecta
 	end
 	
 	def respuesta_user 
+	
+	puts "Introduce las opciones de respuesta: "
+	
 =begin
 	 puts "1): " + r1=gets.chomp
 	 puts "2): " + r2=gets.chomp
@@ -21,12 +24,27 @@ attr_accessor :exam, :respuesta_usuario, :rcorrecta
 =end
 	
 #	@respuesta_usuario = [r1,r2,r3,r4,r5]
-@respuesta_usuario = [gets.chomp,gets.chomp,gets.chomp,gets.chomp,gets.chomp]
+	@respuesta_usuario = [gets.chomp,gets.chomp,gets.chomp,gets.chomp,gets.chomp]
 	
 	end
 	
 	def vresp_user
 		return @respuesta_usuario
+	end
+	
+	def correcta(ans_usuario,numero_preg)
+	
+		if ans_usuario == @rcorrecta[numero_preg] then
+		
+			puts "Pregunta #{numero_preg+1}: Respuesta correcta"
+			true
+		
+		else
+			puts "Pregunta #{numero_preg+1}: Respuesta incorrecta"
+			false
+		
+		end
+		
 	end
 	
 	def to_s
@@ -48,9 +66,8 @@ attr_accessor :exam, :respuesta_usuario, :rcorrecta
 	
 	def respuesta_correcta
 
-		return @rcorrecta 
 		
-=begin		if vresp_user != rcorrecta 
+		if vresp_user != rcorrecta 
 		
 			puts "Hay respuestas erroneas\n\n"
 		
@@ -71,7 +88,7 @@ attr_accessor :exam, :respuesta_usuario, :rcorrecta
 				puts "Todas las respuestas son correctas\n"
 			
 		end
-=end
+
 	end
 
 
