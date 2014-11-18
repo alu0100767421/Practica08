@@ -350,8 +350,7 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     
     end
   
-  
-    it "#Preguntas de la clase examen" do
+   it "#Preguntas de la clase examen" do
 	
 	expect(@ex.to_s).to eq(@l.print)
 	
@@ -383,6 +382,7 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     	expect(@ex.is_a?Examen).to eq(true)
     	
     end
+   
 
 	  
   end

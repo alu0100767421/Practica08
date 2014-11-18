@@ -350,7 +350,38 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
     
     end
   
-  
+   it "#Preguntas de la clase examen" do
+	
+	expect(@ex.to_s).to eq(@l.print)
+	
+    end
+    
+    it "#Respuestas Correctas" do
+    
+    	expect(@ex.rcorrecta[0]).to eq(@p1.rescorr)
+    	expect(@ex.rcorrecta[1]).to eq(@p2.rescorr)
+    	expect(@ex.rcorrecta[2]).to eq(@p3.rescorr)
+    	expect(@ex.rcorrecta[3]).to eq(@p4.rescorr)
+    	expect(@ex.rcorrecta[4]).to eq(@p5.rescorr)
+    
+    end
+    
+    it "#Introducir respuestas usuario" do
+    
+    	expect(@ex.correcta('b',0)).to eq(true)
+    	expect(@ex.correcta('a',1)).to eq(true)
+    	expect(@ex.correcta('d',2)).to eq(false)
+    	expect(@ex.correcta('a',3)).to eq(true)
+    	expect(@ex.correcta('a',4)).to eq(true)
+    
+    
+    end
+    
+    it "#Constructor exam" do
+    
+    	expect(@ex.is_a?Examen).to eq(true)
+    	
+    end
    
 
 	  
