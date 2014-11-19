@@ -257,8 +257,9 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
 
       @ex = Examen.new(@l)
       
-      #@ex.respuesta_user
-     
+      @int = Interfaz.new(@ex)
+      
+    
 
     end
     
@@ -352,7 +353,7 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
   
    it "#Preguntas de la clase examen" do
 	
-	expect(@ex.to_s).to eq(@l.print)
+	#expect(@ex.to_s).to eq(@l.print)
 	
     end
     
@@ -386,16 +387,33 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
 
 	#@ex.calificacion
 
-        expect(@ex.correcta('b',0)).to eq(true)
-    	expect(@ex.correcta('a',1)).to eq(true)
-    	expect(@ex.correcta('d',2)).to eq(false)
-    	expect(@ex.correcta('a',3)).to eq(true)
-    	expect(@ex.correcta('a',4)).to eq(true)
+        expect(@int.correcta('b',0)).to eq(true)
+    	expect(@int.correcta('a',1)).to eq(true)
+    	expect(@int.correcta('d',2)).to eq(false)
+    	expect(@int.correcta('a',3)).to eq(true)
+    	expect(@int.correcta('a',4)).to eq(true)
 
-	expect(@ex.calificacion).to eq(true)
+	expect(@int.calificacion).to eq(true)
 	#expect(@ex.correctaP<3).to eq(false)	
 
    end
+   
+   it "#Constructor Interfaz" do
+   
+   	expect(@int.is_a?Interfaz).to eq(true)
+   
+   end
+   
+   
+   it "#Interfaz to_s" do
+   
+   	expect(@int.to_s). to eq(@lista.print)
+   
+   end
+   
+   
+   
+   
 
 	  
   end
@@ -404,10 +422,8 @@ end\n a) Una instancia de la clase Class\n b) Una constante\n c) Un objeto\n d) 
   
   
   
-  end
-  
-
-  end
+ end
+end
   
 
   

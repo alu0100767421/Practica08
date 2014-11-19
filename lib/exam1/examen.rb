@@ -78,19 +78,57 @@ attr_accessor :exam, :respuesta_usuario, :rcorrecta, :correctaP
 		
 	end
 	
-	def respuesta_correcta
+	
+
+
+end
+
+
+class Interfaz
+
+attr_accessor :interfaz, :correctaP
+
+def initialize (examen)
+
+	@interfaz = examen
+	@correctaP = 0
+
+end
+
+def to_s
+
+	@interfaz.to_s
+		
+end
+
+def correcta(ans_usuario,numero_preg)
+	
+		if ans_usuario == @interfaz.rcorrecta[numero_preg] then
+		
+			puts "Pregunta #{numero_preg+1}: Respuesta correcta"
+			@correctaP+=1
+			true
+		
+		else
+			puts "Pregunta #{numero_preg+1}: Respuesta incorrecta"
+			false
+		
+		end
+end
+
+def respuesta_correcta
 
 		
-		if vresp_user != rcorrecta 
+		if @interfaz.respuesta_usuario != @interfaz.rcorrecta 
 		
 			puts "Hay respuestas erroneas\n\n"
 		
 			for i in (0..4)
 		
-				if vresp_user[i] != rcorrecta[i] 
+				if @interfaz.respuesta_usuario[i] != @interfaz.rcorrecta[i] 
 					puts "Pregunta #{i+1} incorrecta "
 			
-				elsif vresp_user[i] == rcorrecta[i] 
+				elsif @interfaz.respuesta_usuario[i] == @interfaz.rcorrecta[i] 
 					puts "Pregunta #{i+1} correcta "
 				end
 				
@@ -103,7 +141,19 @@ attr_accessor :exam, :respuesta_usuario, :rcorrecta, :correctaP
 			
 		end
 
-	end
+end
+
+def calificacion
+
+		if @correctaP >= 3 then
+			puts "Calificación: Aprobado"
+			true
+		else
+			puts "Calificación: Suspendido"
+			false
+		end
+end
+
 
 
 end
